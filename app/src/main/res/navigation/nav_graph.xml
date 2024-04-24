@@ -3,9 +3,111 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/operationsFragment">
+    app:startDestination="@id/operations">
     <fragment
-        android:id="@+id/operationsFragment"
+        android:id="@+id/operations"
         android:name="com.example.studymobileapplication.OperationsFragment"
-        android:label="OperationsFragment" />
+        android:label="OperationsFragment" >
+        <action
+            android:id="@+id/action_operations_to_addExpenseFragment"
+            app:destination="@id/addExpenseFragment" />
+        <action
+            android:id="@+id/action_operations_to_transferFragment"
+            app:destination="@id/transferFragment" />
+        <action
+            android:id="@+id/action_operations_to_addIncomeFragment"
+            app:destination="@id/addIncomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addExpenseFragment"
+        android:name="com.example.studymobileapplication.ExpenseFragment"
+        android:label="ExpenseFragment" >
+        <action
+            android:id="@+id/action_addExpenseFragment_to_operations"
+            app:destination="@id/operations" />
+        <action
+            android:id="@+id/action_addExpenseFragment_to_transferFragment"
+            app:destination="@id/transferFragment" />
+        <action
+            android:id="@+id/action_addExpenseFragment_to_addIncomeFragment"
+            app:destination="@id/addIncomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addIncomeFragment"
+        android:name="com.example.studymobileapplication.IncomeFragment"
+        android:label="IncomeFragment" >
+        <action
+            android:id="@+id/action_addIncomeFragment_to_operations"
+            app:destination="@id/operations" />
+        <action
+            android:id="@+id/action_addIncomeFragment_to_addExpenseFragment"
+            app:destination="@id/addExpenseFragment" />
+        <action
+            android:id="@+id/action_addIncomeFragment_to_transferFragment"
+            app:destination="@id/transferFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transferFragment"
+        android:name="com.example.studymobileapplication.TransferFragment"
+        android:label="TransferFragment" >
+        <action
+            android:id="@+id/action_transferFragment_to_operations"
+            app:destination="@id/operations" />
+        <action
+            android:id="@+id/action_transferFragment_to_addExpenseFragment"
+            app:destination="@id/addExpenseFragment" />
+        <action
+            android:id="@+id/action_transferFragment_to_addIncomeFragment"
+            app:destination="@id/addIncomeFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/informationFragment"
+        android:name="com.example.studymobileapplication.InformationFragment"
+        android:label="InformationFragment" >
+        <action
+            android:id="@+id/action_informationFragment_to_changeTransferFragment"
+            app:destination="@id/editTransferFragment" />
+        <action
+            android:id="@+id/action_informationFragment_to_changeOperationFragment"
+            app:destination="@id/editOperationFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/accounts"
+        android:name="com.example.studymobileapplication.AccountsFragment"
+        android:label="AccountsFragment" >
+        <action
+            android:id="@+id/action_accounts_to_accountInformationFragment"
+            app:destination="@id/accountInformationFragment" />
+        <action
+            android:id="@+id/action_accounts_to_addAccountFragment"
+            app:destination="@id/addAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountInformationFragment"
+        android:name="com.example.studymobileapplication.AccountInformationFragment"
+        android:label="AccountInformationFragment" >
+        <action
+            android:id="@+id/action_accountInformationFragment_to_editAccountFragment"
+            app:destination="@id/editAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAccountFragment"
+        android:name="com.example.studymobileapplication.AddAccountFragment"
+        android:label="AddAccountFragment" />
+    <fragment
+        android:id="@+id/editAccountFragment"
+        android:name="com.example.studymobileapplication.EditAccountFragment"
+        android:label="EditAccountFragment" >
+        <action
+            android:id="@+id/action_editAccountFragment_to_accounts"
+            app:destination="@id/accounts" />
+    </fragment>
+    <fragment
+        android:id="@+id/editOperationFragment"
+        android:name="com.example.studymobileapplication.EditOperationFragment"
+        android:label="EditOperationFragment" />
+    <fragment
+        android:id="@+id/editTransferFragment"
+        android:name="com.example.studymobileapplication.EditTransferFragment"
+        android:label="EditTransferFragment" />
 </navigation>

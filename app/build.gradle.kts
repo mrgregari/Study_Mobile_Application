@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.kapt")
+    id("org.jetbrains.dokka") version "1.9.20"
 }
 
 android {
@@ -64,4 +65,6 @@ dependencies {
 
     implementation("androidx.room:room-ktx:2.6.1")
     kapt("androidx.room:room-compiler:2.6.1")
+
+    dokkaPlugin("org.jetbrains.dokka:android-documentation-plugin:1.9.20")
 }
